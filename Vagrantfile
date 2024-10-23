@@ -15,6 +15,10 @@ Vagrant.configure("2") do |config|
     tierra.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get install -y bind9 bind9utils bind9-doc
+      cp /vagrant/tierraConf/named.conf.local /etc/bind/named.conf.local
+      cp /vagrant/tierraConf/named.conf.options /etc/bind/named.conf.options
+      cp /vagrant/tierraConf/57.168.192.rev /etc/bind/57.168.192.rev
+      cp /vagrant/tierraConf/sistema.test.zone /etc/bind/sistema.test.zone
     SHELL
   end
 
@@ -25,6 +29,7 @@ Vagrant.configure("2") do |config|
     venus.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get install -y bind9 bind9utils bind9-doc
+      
     SHELL
   end
 
