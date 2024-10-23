@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "tierra" do |tierra|
     tierra.vm.box = "debian/bookworm64"
     tierra.vm.hostname = "tierra.sistema.test"
-    tierra.vm.network "private_network", ip: "192.168.57.10";
+    tierra.vm.network "private_network", ip: "192.168.57.103";
 
     tierra.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
@@ -25,11 +25,12 @@ Vagrant.configure("2") do |config|
   config.vm.define "venus" do |venus|
     venus.vm.box = "debian/bookworm64"
     venus.vm.hostname = "venus.sistema.test"
-    venus.vm.network "private_network", ip: "192.168.57.11";
+    venus.vm.network "private_network", ip: "192.168.57.102";
     venus.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get install -y bind9 bind9utils bind9-doc
-      
+      cp /vagrant/venusConf/named.conf.local /etc/bind/named.conf.local
+      cp /vagrant/venusConf/named.conf.options /etc/bind/named.conf.options
     SHELL
   end
 
