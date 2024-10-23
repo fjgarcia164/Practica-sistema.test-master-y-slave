@@ -1,0 +1,21 @@
+$TTL 86400
+@   IN  SOA tierra.sistema.test. root.sistema.test. (
+        2023101201  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400       ; Minimum TTL
+)
+
+    IN  NS  tierra.sistema.test.
+    IN  NS  venus.sistema.test.
+
+ns1 IN  CNAME tierra.sistema.test.
+ns2 IN  CNAME venus.sistema.test.
+mail IN  CNAME marte.sistema.test.
+
+tierra  IN  A  192.168.57.10
+venus   IN  A  192.168.57.11
+marte   IN  A  192.168.57.12
+
+@   IN  MX 10 marte.sistema.test.
