@@ -1,0 +1,15 @@
+$TTL 86400
+@   IN  SOA tierra.sistema.test. root.sistema.test. (
+        2023101201  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400       ; Minimum TTL
+)
+
+    IN  NS  tierra.sistema.test.
+    IN  NS  venus.sistema.test.
+
+10  IN  PTR tierra.sistema.test.
+11  IN  PTR venus.sistema.test.
+12  IN  PTR marte.sistema.test.
