@@ -36,6 +36,7 @@ En Venus (Servidor Esclavo)
    - Define las zonas DNS como esclavas, sincronizadas desde Tierra:
        - sistema.test: Zona directa esclava.
        - 57.168.192.in-addr.arpa: Zona inversa esclava.
+         
 
 Cómo Funciona
     1. El servidor Tierra es el servidor maestro que contiene los archivos de zona con la información DNS del dominio sistema.test.
